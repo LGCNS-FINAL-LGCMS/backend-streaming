@@ -1,0 +1,48 @@
+server:
+  port: 38113
+
+spring:
+  application:
+    name: backend-streaming
+
+  servlet:
+    multipart:
+      max-file-size: 1200MB
+      max-request-size: 1200MB
+
+  kafka:
+    bootstrap-servers: localhost:38123
+
+    listener:
+      ack-mode: manual_immediate
+
+    consumer:
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      enable-auto-commit: false
+      auto-offset-reset: latest
+      max-poll-records: 10
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+
+cloud:
+  aws:
+    s3:
+      bucket: lgcms-files
+    credentials:
+      access-key: ${S3_ACCESS_KEY}
+      secret-key: ${S3_SECRET_KEY}
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
