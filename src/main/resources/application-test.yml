@@ -39,6 +39,9 @@ spring:
         auto: false
       stack:
         auto: false
+    cdn:
+      url: asdasd
+
 
 ffmpeg:
   path: asdv

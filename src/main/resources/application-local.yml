@@ -46,6 +46,9 @@ cloud:
       auto: false
     stack:
       auto: false
+    cdn:
+      url: ${CND_URL}
+
 
 ffmpeg:
   path: ${FFMPEG_PATH}
