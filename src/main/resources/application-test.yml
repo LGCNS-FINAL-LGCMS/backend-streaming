@@ -39,8 +39,8 @@ cloud:
       auto: false
     stack:
       auto: false
-  cdn:
-    url: asdasd
+    cdn:
+      url: asdasd
 
 
 ffmpeg:
