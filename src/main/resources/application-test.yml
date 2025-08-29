@@ -27,20 +27,20 @@ spring:
       properties:
         spring.json.add.type.headers: false
 
-  cloud:
-    aws:
-      s3:
-        bucket: hello
-      credentials:
-        access-key: akey
-        secret-key: skey
-      region:
-        static: ap-northeast-2
-        auto: false
-      stack:
-        auto: false
-    cdn:
-      url: asdasd
+cloud:
+  aws:
+    s3:
+      bucket: hello
+    credentials:
+      access-key: akey
+      secret-key: skey
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
+  cdn:
+    url: asdasd
 
 
 ffmpeg:
