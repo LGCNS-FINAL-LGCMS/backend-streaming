@@ -5,7 +5,7 @@ spring:
   application:
     name: backend-streaming
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: localhost:9094
 
     listener:
       ack-mode: manual_immediate
@@ -26,3 +26,24 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: false
+
+cloud:
+  aws:
+    s3:
+      bucket: hello
+    credentials:
+      access-key: akey
+      secret-key: skey
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
+    cdn:
+      url: asdasd
+
+
+ffmpeg:
+  path: asdv
+ffprobe:
+  path: zxcas
