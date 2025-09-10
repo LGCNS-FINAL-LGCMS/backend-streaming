@@ -18,7 +18,7 @@ public class EncodingConsumeService {
     private final StreamingService streamingService;
     private final KafkaEventFactory kafkaEventFactory;
 
-    @KafkaListener(topics = "ENCODING")
+    @KafkaListener(topics = "ENCODING",containerFactory = "defaultFactory")
     public void EncodingEvent(KafkaEvent<?> event){
         LectureEncodeDto lectureEncodeDto = kafkaEventFactory.convert(event, LectureEncodeDto.class);
 
